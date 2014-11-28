@@ -1,0 +1,221 @@
+/*!
+ * Based on Bootstrap v2.3 
+ */
+
+@import "../bower_components/bootstrap-2.3.2-legacy/less/bootstrap.less";
+
+@iconSpritePath:          "../bower_components/bootstrap-2.3.2-legacy/img/glyphicons-halflings.png";
+@iconWhiteSpritePath:     "../bower_components/bootstrap-2.3.2-legacy/img/glyphicons-halflings-white.png";
+
+
+@gray-bg: #f9f9f9;
+
+// common stuff =======================================================
+
+body{
+  background: @gray-bg;
+  padding: 50px;
+  color: #6c696a;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  }
+
+
+a{color: #158bbb}
+
+.btn-primary{
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #158bbb;
+  *background-color: #158bbb;
+  background-image: none;
+  background-repeat: repeat-x;
+  border-color: #158bbb #158bbb #158bbb;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+}
+
+
+h4{
+  font-size: 14px;
+  color: #158bbb;
+}
+
+h3{
+  color: #158bbb;
+  border-top: 1px solid rgba(0,0,0,.1);
+  padding-top: 20px;
+  &:first-child{border: none;}  
+}
+
+.container-fluid{
+//  background: red;
+}
+
+// lifecycle =======================================================
+
+.lifecycle-inner-container{
+  margin:0 0 60px -20px;
+  .clearfix();
+}
+
+
+
+.has-scroll{
+  width: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  
+  &::-webkit-scrollbar {
+//      width: 5px;
+      height: 10px;
+  } /* this targets the default scrollbar (compulsory) */  
+  
+  &::-webkit-scrollbar-track {
+      background-color: rgba(0,0,0,.1);
+      border-radius: 5px;
+      } /* the new scrollbar will have a flat appearance with the set background color */
+ 
+  &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.1); 
+      border-radius: 5px;
+  } /* this will style the thumb, ignoring the track */
+ 
+  
+  .lifecycle-inner-container{margin-bottom: 0;}
+  
+  &.five-stages .lifecycle-inner-container{width: 1200px;}
+  &.six-stages .lifecycle-inner-container{width: 1440px;}
+  &.seven-stages .lifecycle-inner-container{width: 1680px;}
+  &.eight-stages .lifecycle-inner-container{width: 1920px;}
+  &.nine-stages .lifecycle-inner-container{width: 2160px;}
+  &.ten-stages .lifecycle-inner-container{width: 2400px;}
+ 
+  
+}// container 
+
+
+.reset-strong{ 
+  display: block;
+  width: auto;
+  text-align: left;
+}
+
+.lifecycle-item{
+  float: left;
+  
+  .two-stages &{
+    width: 50%;
+  }
+  .three-stages &{
+    width: 33.33%;
+  }
+  .four-stages &{
+    width: 25%;
+    strong{.reset-strong}
+  }
+  .five-stages &{
+    width: 20%;
+    strong{.reset-strong}
+  }
+
+  .six-stages &{
+    width: 16.66%;
+    strong{.reset-strong}
+  }
+
+  .seven-stages &{
+    width: 14.28%;
+    strong{.reset-strong}
+  }
+
+  .eight-stages &{
+    width: 12.5%;
+    strong{.reset-strong}
+  }
+
+  .nine-stages &{
+    width: 11.11%;
+    strong{.reset-strong}
+  }
+
+  .ten-stages &{
+    width: 10%;
+    strong{.reset-strong}
+  }
+
+  .has-scroll &{
+    width: 240px!important;
+  }
+
+}
+
+
+
+
+
+.lifecycle-stage{
+  margin-left: 20px;
+  min-height: 100px;
+//  text-align: center;
+  padding: 30px 10px 10px 10px;
+  border-radius:4px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-bottom: 3px solid #b3b3b3;
+  position: relative;
+  &:before{
+    content: ".";
+    text-indent: -99999px;
+    position: absolute;
+    top: 0;
+    left: -22px;
+    bottom: 0;
+    width: 22px;
+    background: url(../img/stage-link.png) no-repeat center 40px ;
+    background-size: 22px 32px;
+  }
+
+  .stage-title{
+    position: absolute;
+    font-size: 14px;
+    top: -1px;
+    left: -1px;
+    padding: 3px 7px;
+    font-weight: bold;
+    background-color: #158bbb;
+    color: #fff;
+    border-radius: 4px 0 4px 0;
+  }
+  
+  ul{
+    border-radius: 4px;
+    padding: 0px 0;
+    border: 1px solid @grayLighter;
+    strong{
+      width: 120px;
+      text-align: right;
+      display: inline-block;
+    }
+    li{
+      padding: 3px;
+      border-bottom: 1px solid @grayLighter;
+      .small-stages &{
+        padding: 3px;  
+      }
+ 
+      &:last-child{
+        border: none;
+      }
+    }
+  }
+  
+}
+
+.lifecycle-inner-container > div:first-child .lifecycle-stage:before {display: none;}
+
+
+
+
+
